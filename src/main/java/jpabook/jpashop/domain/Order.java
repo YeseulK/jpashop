@@ -18,10 +18,12 @@ public class Order {
     @Column(name = "order_id")
     private Long id;
 
+    //XToOne은  default가 EAGER이므로 LAZY로 바꿔줘야 한다.
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private Member member;
 
+    //XToMany는 default가 LAZY이다.
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems = new ArrayList<>();
 
