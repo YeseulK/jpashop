@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import jpabook.jpashop.domain.Category;
+import org.hibernate.annotations.BatchSize;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
